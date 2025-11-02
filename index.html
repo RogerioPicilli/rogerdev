@@ -110,10 +110,28 @@
         Acredito que cada solução começa com uma boa ideia — e com disciplina e propósito,
         ideias se tornam resultados concretos.
       </p>
+    
+      <!-- Caixa onde o código do Mercado Livre será mostrado -->
+    <div id="codeDisplay" class="code-box" style="display: none;"></div>
+    </div>
     </div>
         <div class="foto">
             <img src="rogerio.jpg" alt="Foto de Rogério Picilli">
         </div>
   </div>
+  <script>
+    // 🔹 Captura parâmetros da URL
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const codeBox = document.getElementById('codeDisplay');
+
+    if (code) {
+      codeBox.style.display = 'block';
+      codeBox.innerHTML = `
+        <strong>Seu código de autorização Mercado Livre:</strong><br>
+        ${code}
+      `;
+    }
+  </script>
 </body>
 </html>
